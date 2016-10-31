@@ -15,16 +15,9 @@ public class MainActivity extends AppCompatActivity {
 		LinearLayout layout = new LinearLayout(this);
 		layout.setOrientation(LinearLayout.VERTICAL);
 
-		TextView test = new TextView(this);
-		test.setText("Test 1234: Text above searchbox");
-		TextView test2 = new TextView(this);
-		test2.setText("Test 1234: Text below searchbox");
 
 		InteractiveSearcher searchBox = new InteractiveSearcher(this);
-
-		layout.addView(test);
 		layout.addView(searchBox);
-		layout.addView(test2);
 
 		setContentView(layout);
 	}

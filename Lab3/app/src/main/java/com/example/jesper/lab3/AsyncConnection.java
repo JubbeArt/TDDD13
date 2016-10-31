@@ -74,7 +74,7 @@ class AsyncConnection extends AsyncTask<String, Void, String> {
 					resultArray[i] = jsonResult.getString(i);
 
 				searcher.setLargestReceivedID(id);
-				searcher.setCurrentSuggestions(resultArray);
+				searcher.getSuggestionsBox().setCurrentSuggestions(resultArray);
 			}
 
 		} catch (JSONException e) {
