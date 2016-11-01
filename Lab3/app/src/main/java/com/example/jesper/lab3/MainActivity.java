@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
 		LinearLayout layout = new LinearLayout(this);
 		layout.setOrientation(LinearLayout.VERTICAL);
 
-
 		InteractiveSearcher searchBox = new InteractiveSearcher(this);
 		layout.addView(searchBox);
 

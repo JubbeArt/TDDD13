@@ -5,10 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import java.util.Arrays;
@@ -94,7 +92,6 @@ public class SuggestionsBox extends View {
 					textBlack
 			);
 		}
-
 	}
 
 	public void setCurrentSuggestions(String[] suggestions) {
