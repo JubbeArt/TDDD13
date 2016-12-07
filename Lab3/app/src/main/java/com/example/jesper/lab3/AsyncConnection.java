@@ -64,14 +64,23 @@ class AsyncConnection extends AsyncTask<String, Void, String> {
 			JSONObject json = new JSONObject(results);
 
 			int id = json.getInt("id");
+			if (id > searcher.getLargestReceivedID()) {
+                		JSONArray jsonResult = json.getJSONArray("result");
+                		int length = jsonResult.length();
+                		String[] resultArray;
 
-			if(id > searcher.getLargestReceivedID()) {
-				JSONArray jsonResult = json.getJSONArray("result");
-				int length = jsonResult.length();
-				String[] resultArray = new String[length];
-
-				for(int i = 0; i < length; i++)
-					resultArray[i] = jsonResult.getString(i);
+                		int n = 8;
+                		if (n < length) {
+                    			resultArray = new String[n];
+					for (int i = 0; i < n; i++) {
+                        		resultArray[i] = jsonResult.getString(i);
+                    			}
+                		} else {
+                    			resultArray = new String[length];
+                    			for (int i = 0; i < length; i++) {
+                        			resultArray[i] = jsonResult.getString(i);
+                    			}
+                		}	
 
 				searcher.setLargestReceivedID(id);
 				searcher.getSuggestionsBox().setCurrentSuggestions(resultArray);
